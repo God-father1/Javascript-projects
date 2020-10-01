@@ -1,0 +1,185 @@
+@font-face {
+	font-family: RussoOne;
+	src: url('RussoOne-Regular.ttf');
+}
+
+*{
+	box-sizing: border-box;
+	outline: none;
+	max-width: 100%;
+	font-family: RussoOne;
+}
+
+html, body{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	background: linear-gradient(#28192b, #253d53);
+}
+
+.container{
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: repeating-linear-gradient(45deg, #eee644, #eee644 20px, black 20px, black 30px);
+}
+
+.inner{
+	position: relative;
+	overflow: hidden;
+	width: 480px;
+	max-width: 480px;
+	min-width: 480px;
+	height: 800px;
+}
+
+.inner > div{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-top: -800px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-around;
+	z-index: 2;
+	transition: 0.5s all;
+	background: rgba(0,0,0,0.8);
+}
+
+.inner > div.active{
+	margin-top: 0;
+}
+
+button{
+	cursor: pointer;
+}
+
+.logo img{
+	height: 80px;
+}
+
+#ready ul{
+	margin: 0;
+	padding: 0;
+	font-size: 0.9em;
+	line-height: 1.5em;
+	text-align: center;
+	width: 400px;
+	list-style-type: none;
+	text-transform: uppercase;
+	color: white;
+
+}
+
+#ready button{
+	width: 100%;
+	font-size: 3em;
+	background: black;
+	color: white;
+	border: none;
+	transition: 0.3s all;
+}
+
+#ready button:hover{
+	background: #241D4F;
+}
+
+#gameboard{
+	z-index: 1;
+	background: linear-gradient(#28192b, #253d53);
+}
+
+#gameboard > div{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+#element > *{
+	position: absolute;
+}
+
+.brick{
+	width: 80px;
+	height: 30px;
+	border-radius: 2px;
+	background-size: 200% 100%;
+	background-image: url('images/brick-0.png');
+}
+
+.brick[data-life="1"]{
+	background-position-x: -100%;
+}
+.brick[data-type="1"]{
+	background-image: url('images/brick-1.png');
+}
+.brick[data-type="2"]{
+	background-image: url('images/brick-2.png');
+}
+.brick[data-type="3"]{
+	background-image: url('images/brick-3.png');
+}
+.brick[data-type="4"]{
+	background-image: url('images/brick-4.png');
+}
+.brick[data-type="5"]{
+	background-image: url('images/brick-5.png');
+}
+
+.ball{
+	width: 20px;
+	height: 20px;
+	border-radius: 1000px;
+	background-size: 100% 100%;
+	background-image: url('images/ball.png');
+}
+
+.pad{
+	width: 130px;
+	height: 60px;
+	background-size: 500% 100%;
+	background-image: url('images/pad.png');
+	animation: sprite 0.5s steps(4) infinite;
+}
+
+@keyframes sprite {
+	to{
+		background-position-x: -100%;
+	}
+}
+
+.state{
+	top: auto !important;
+	bottom: 0;
+	height: 50px !important;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px;
+	pointer-events: none;
+}
+
+.state > div{
+	display: flex;
+	align-items: center;
+}
+
+.state > div > div{
+	margin-right: 10px;
+}
+
+.state #score{
+	font-size: 2em;
+	text-shadow: 0 0 5px blue;
+}
