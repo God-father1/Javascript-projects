@@ -1,0 +1,163 @@
+html{
+    height: 100%;
+    background: radial-gradient(circle, white, grey);
+}
+#container{
+    height: 400px;
+    width: 550px;
+    background-color: #9dd2ea;
+    margin: 100px auto;
+    padding: 20px;
+border-radius: 10px;
+box-shadow: 0px 5px 0px 0 rgb(20, 92, 228);
+-moz-box-shadow: 0px 5px 0px 0 rgb(20, 92, 228);
+-webkit-box-shadow: 0px 5px 0px 0 rgb(20, 92, 228);
+position: relative;
+}
+#score{
+    background-color: #f1ff02;
+    color: #888ef5;
+    padding: 10px;
+position: absolute;
+left: 500px;
+border-radius: 10px;
+box-shadow: 0px 4px 0px 0 yellowgreen;
+-moz-box-shadow: 0px 4px 0px 0 yellowgreen;
+-webkit-box-shadow: 0px 4px 0px 0 yellowgreen;
+}
+
+#correct{
+    position: absolute;
+    left: 250px;
+    background-color: green;
+    padding: 11px;
+    display: none;
+}
+#wrong{
+    position: absolute;
+    left: 250px;
+    background-color: red;
+    padding: 11px;
+    display: none;
+}
+#question{
+    width: 400px;
+    height: 150px;
+    margin: 50px auto 10px auto;
+    background-color: rgb(204, 128, 240);
+    box-shadow: 0px 4px 0px 0 rgb(115, 6, 129);
+    -moz-box-shadow: 0px 4px 0px 0 rgb(115, 6, 129);
+    -webkit-box-shadow: 0px 4px 0px 0 rgb(115, 6, 129);
+    font-size: 100px;
+    text-align: center;
+    font-family: cursive;
+    color: black;
+}
+#instruction{
+    background-color: #9f6ed6;
+    box-shadow: 0px 4px 0px 0 #7421d3;
+    -moz-box-shadow: 0px 4px 0px 0 #7421d3;
+    -webkit-box-shadow: 0px 4px 0px 0 #7421d3;
+    width: 400px;
+    height: 40px;
+    margin: 10px auto;
+    text-align: center;
+    line-height: 2em;
+    font-family: Helvetica;
+    font-weight: 700;
+}
+#choices{
+    height: 100px;
+    width: 400px;
+    margin: 5px auto;
+    display: flex;
+}
+
+.box{
+    width: 75px;
+    height: 75px;
+    background-color: white;
+    float: left;
+    margin-right: 35px;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0px 4px 0px 0 #9444f0;
+    text-align: center;
+    line-height: 2.5em;
+    font-size: 1.5em;
+    position: relative;
+    transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+}
+
+.box:hover{
+    background-color: #c9a0f7;
+    color: white;
+}
+.box:active{
+    box-shadow: 0px 0px 0px 0 #9444f0;
+    -moz-box-shadow: 0px 0px 0px 0 #9444f0;
+    -webkit-box-shadow: 0px 0px 0px 0 #9444f0;
+    top: 4px;
+}
+#box4{
+    margin-right: 0px;
+}
+
+#startreset{
+    width: 80px;
+    height: auto;
+    padding: 10px;
+    background-color: #f5deb3;
+    margin: 0 auto;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0px 4px 0px 0 #887248;
+    text-align: center;
+    margin: 10px auto;
+    position: relative;
+    transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+}
+#startreset:hover{
+    background-color: #f3c267;
+    color: white;
+}
+#startreset:active{
+    box-shadow: 0px 0px 0px 0 #9444f0;
+    -moz-box-shadow: 0px 0px 0px 0 #9444f0;
+    -webkit-box-shadow: 0px 0px 0px 0 #9444f0;
+    top: 4px;
+}
+#timeremaining{
+    width: 200px;
+    padding: 10px;
+    position: absolute;
+    top: 390px;
+    width: 170px;
+    text-align: center;
+    background-color: greenyellow;
+    left: 390px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 0px 0 rgb(91, 134, 25);
+    -moz-box-shadow: 0px 4px 0px 0 rgb(91, 134, 25);
+    -webkit-box-shadow: 0px 4px 0px 0 rgb(91, 134, 25);
+    display: none;
+}
+#gameover{
+    height: 200px;
+    width: 500px;
+    background: linear-gradient(yellow, darkorange);
+    font-size: 2.5em;
+    text-align: center;
+    text-transform: uppercase;
+    position: absolute;
+    top: 100px;
+    left: 45px;
+    z-index: 2;
+    display: none;
+}
