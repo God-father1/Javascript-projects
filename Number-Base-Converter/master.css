@@ -1,0 +1,127 @@
+input[type='text'],
+input[type='number'] {
+  width: 100%;
+  padding: 12px;
+  /* border: 1px solid #ccc; */
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 2px;
+}
+button {
+  float: right;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+
+  letter-spacing: 2px;
+  background-color: #1c114d;
+  margin-top: 15px;
+}
+
+/* Style the label to display next to the inputs */
+label {
+  padding: 12px 12px 12px 0px;
+  display: inline-block;
+}
+
+/* Style the container */
+.container {
+  border-radius: 5px;
+  background-color: #d3eef1;
+  padding: 20px;
+}
+.container-main {
+  border-radius: 5px;
+  background-color: #d3eef1;
+  padding: 5px;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25,
+  .col-75,
+  label {
+    width: 100%;
+    padding: 6px 6px 0px 0px;
+  }
+}
+
+input:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
+  outline: none;
+}
+label,
+button {
+  font-family: 'Acme', sans-serif;
+}
+h1 {
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #d3eef1;
+  padding: 12px;
+  font-size: 30px;
+
+  color: rgb(10, 10, 10);
+  color: #1c114d;
+}
+label {
+  font-size: 13px;
+  color: #898ba9;
+  color: #5b5c74;
+}
+button {
+  color: white;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.invalid {
+  background-color: rgb(248, 177, 190);
+}
+.valid {
+  background-color: rgb(255, 255, 255);
+}
+
+em {
+  font-family: 'Acme', sans-serif;
+  float: right;
+  margin-top: 10px;
+  color: #898ba9;
+}
