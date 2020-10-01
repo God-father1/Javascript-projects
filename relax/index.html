@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Relax</title>
+  </head>
+  <body>
+    <h1>Relax for <span><input  id="min" type="number" min="1" max="60" value="2"/>
+    </span> minutes</h1>
+    <div class="container" id="container">
+      <div class="circle"></div>
+
+      <h4 id="text"></h4>
+
+      <div class="pointer-container">
+        <span class="pointer"></span>
+      </div>
+
+      <div class="gradient-circle"></div>
+    </div>
+    <h3 id="con"></h3>
+    <audio autoplay loop id="audio" src="music.mp3">
+    </audio>
+    <script src="script.js"></script>
+  </body>
+</html>
