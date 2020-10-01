@@ -1,0 +1,84 @@
+body {
+	background-color: pink;
+	font-family: Roboto;
+}
+
+h1 {
+	padding: 10px 20px;
+	margin: 0px;
+	background-color: #2980b9;
+	color: white;
+	font-size: 28px;
+	font-weight: 400;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	background-color: #fff;
+	line-height: 40px;
+	font-weight: 400;
+	font-size: 20px;
+}
+
+li:nth-child(2n) {
+	background-color: #f7f7f7;
+}
+
+input {
+	height: 40px;
+	width: 100%;
+	outline: none;
+	background-color: #f7f7f7;
+	color: #2980b9;
+	padding: 13px 13px 13px 20px;
+	box-sizing: border-box;
+	border: rgba(0, 0, 0, 0);
+}
+
+input:focus {
+	outline: 3px solid #2980b9;
+}
+
+#container {
+	background-color: #f7f7f7;
+	width: 360px;
+	margin: 100px auto;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.completed {
+	color: gray;
+	text-decoration: line-through;
+}
+
+.delete {
+	background-color: red;
+	display: inline-block;
+	/*width: 10px;*/
+}
+
+h1 i {
+	float: right;
+}
+
+span {
+	color: white;
+	background-color: #e74c3c;
+	height: 40px;
+	width: 0px;
+	margin-right: 20px;
+	text-align-last: center;
+	display: inline-block;
+	opacity: 0;
+}
+
+li:hover span {
+	opacity: 1.0;
+	width: 40px;
+	transition: 0.3s;
+}
