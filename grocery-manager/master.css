@@ -1,0 +1,218 @@
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+.input-field .prefix.active {
+  color: #0277bd;
+}
+
+input:not([type]):focus:not([readonly]),
+input[type='text']:not(.browser-default):focus:not([readonly]),
+input[type='number']:not(.browser-default):focus:not([readonly]) {
+  border-bottom: 1px solid #0277bd;
+  box-shadow: 0 1px 0 0 #0277bd;
+}
+input:not([type]):focus:not([readonly]) + label,
+input[type='text']:not(.browser-default):focus:not([readonly]) + label,
+input[type='number']:not(.browser-default):focus:not([readonly]) + label {
+  color: #0277bd;
+}
+
+.btn {
+  margin-right: 20px;
+}
+
+.add-product,
+.create-product-form,
+.total-products {
+  padding: 15px 10px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .add-product,
+  .create-product,
+  .total-products,
+  .charts {
+    width: 97%;
+    /* margin:0px 5px; */
+  }
+  .time-line {
+    width: 95%;
+  }
+  .product-create {
+    width: 100%;
+  }
+  .input-field {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+}
+.delete-icon {
+  margin-right: 0px !important;
+}
+
+/* new */
+.create-product-icon-box {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5em;
+}
+.heading {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 2.08em;
+  font-weight: 600;
+  padding-left: 1rem;
+
+  margin-bottom: 0px;
+}
+
+#product-name-timelineautocomplete-list > div {
+  padding: 10px 10px 10px 10px;
+  background-color: #ffffff;
+  margin-left: 30px !important;
+  border-radius: 2px;
+  /* border: 1px solid #0277bd; */
+  margin: 2px;
+}
+#product-name-timelineautocomplete-list > div:hover {
+  background-color: #e7e7e7;
+}
+
+.collapsible {
+  -webkit-box-shadow: 0 2px 2px 0 rgba(255, 255, 255, 0.14);
+  box-shadow: 0 2px 2px 0 rgba(255, 255, 255, 0.14);
+  margin-bottom: 0px;
+}
+
+.collapsible {
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+
+.nav-wrapper {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.time-line {
+  padding: 15px 10px;
+}
+
+.p-name:first-letter {
+  text-transform: uppercase;
+}
+.p-name,
+.name-p {
+  margin: 0px;
+}
+/* dash board */
+
+.all-products {
+  margin-left: 0px;
+  margin-bottom: 10px;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+.name-p {
+  padding: 10px;
+  /* border: 1px solid #ddd; */
+}
+#dashBoard > div:nth-child(2) {
+  margin-bottom: 0px;
+}
+.collapsible-header-2 {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+.all-product:last-child .collapsible-header-2 {
+  border-bottom: 1px solid #ddd;
+}
+.collapsible-header-2 > .row {
+  margin-bottom: 0px;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+.collapsible-body-2 {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+.all-product:last-child .collapsible-body-2 {
+  border-bottom: 1px solid #ddd;
+  border-top: 0px solid #ddd;
+}
+.collapsible-body-2 {
+  display: none;
+  border-bottom: 1px solid #ddd;
+
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+.cap,
+.name-p {
+  text-transform: capitalize;
+}
+.info {
+  margin: 0px !important;
+  padding: 0px 6px !important;
+}
+
+.edit.row {
+  margin-bottom: 10px;
+}
+.edit {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.collapsible-body-2 .row {
+  margin-bottom: 10px;
+}
+.charts {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.swal-button--cancel:not([disabled]):hover,
+.swal-button--cancel:not([disabled]):active,
+.swal-button--cancel:not([disabled]):focus {
+  background-color: #0277bd;
+  color: white;
+}
+.swal-button--cancel,
+.swal-button--cancel:active {
+  background-color: #0277bd;
+  color: white;
+}
+
+.swal-button--danger:focus {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(116, 136, 150, 0.29);
+  background-color: #e64942;
+}
+
+.date {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 3px solid #ddd;
+  border-radius: 15px;
+  font-weight:bold;
+  font-size: 1rem;
+  line-height: 22px;
+  color: #5c5c5c;
+}
