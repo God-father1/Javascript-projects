@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validateForm</title>
+
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://kit.fontawesome.com/1c2c2462bf.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <div class="container">
+            <form class="form-horizontal" id="validateForm">
+                <h1>Welcome</h1>
+                <fieldset>
+                    <!--Email input-->
+                    <div class="form-group">
+                        <label class="col-md-12 control-label" for="textinput">
+                            Email
+                        </label>
+                        <div class="col-md-12">
+                            <input id="email" name="textinput" 
+                            type="email" autocomplete="off" 
+                            placeholder="Enter your email address" 
+                            class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <!--Password input-->
+                    <div class="form-group">
+                        <label class="col-md-12 control-label" for="passwordinput">
+                            Password
+                        </label>
+                        <div class="col-md-12">
+                            <input id="password" class="form-control input-md"
+                            name="password" type="password"
+                            placeholder="Enter your password">
+                            <span class="show-pass" onclick="toggle()">
+                            <i class="fa fa-eye" onclick="myFunction(this)"></i>
+                            </span>
+                            <div id="popover-password">
+                                <p><span id="result"></span></p>
+                                <div class="progress">
+                                    <div id="password-strength"
+                                        class="progress-bar"
+                                        role="progressbar"
+                                        aria-valuenow="40"
+                                        aria-valuemin="0"
+                                        aria-valuemax="100"
+                                        style="width:0%">
+                                    </div>
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li class="">
+                                        <span class="low-upper-case">
+                                            <i class="fa fa-circle" aria-hidden="true"></i>
+                                            &nbsp;Lowercase &amp; Uppercase
+                                        </span>
+                                    </li>
+                                    <li class="">
+                                        <span class="one-number">
+                                            <i class="fa fa-circle" aria-hidden="true"></i>
+                                            &nbsp;Number (0-9)
+                                        </span>
+                                    </li>
+                                    <li class="">
+                                        <span class="one-special-char">
+                                            <i class="fa fa-circle" aria-hidden="true"></i>
+                                            &nbsp;Special Character (!@#$%^&*)
+                                        </span>
+                                    </li>
+                                    <li class="">
+                                        <span class="eight-character">
+                                            <i class="fa fa-circle" aria-hidden="true"></i>
+                                            &nbsp;Atleast 8 Character
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Button-->
+                    <div class="form-group">
+                        <a href="#" class="btn login-btn btn-block">
+                            Create Account
+                        </a>
+                    </div>
+                    <div class="ex-account text-center">
+                        <p>Already have an account? Sign in
+                            <a href="/">here</a>
+                        </p>
+                        <div class="divider"></div>
+                    </div>
+                </fieldset>
+            </form>   
+        </div>
+       <script src="js/index.js"></script> 
+    </body>
+</html>         
