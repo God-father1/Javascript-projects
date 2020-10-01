@@ -1,0 +1,99 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #2d3142;
+    font-family: Garamond;
+  }
+  .container {
+    text-align: center;
+    line-height: 48px;
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  .elem {
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    font-size: 21px;
+    position: absolute;
+    border-radius: 4px;
+    z-index: 3;
+    padding: 10px 15px;
+    transition: background-color 0.2s;
+  }
+  .level0 {
+    background-color: #6290c3;
+    color: #2d3142;
+    font-style: bold;
+    transition: all 0.5s;
+  }
+  .level0:hover {
+    background-color: #4e739c;
+    border-radius: 10px;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .level1 {
+    background-color: #b0d7ff;
+    color: #2d3142;
+    transition: all 0.5s;
+    padding: 10px 18px;
+    /*color: white;
+    background: rgba(0,0,0,0);*/
+  }
+  .level1:hover {
+    transition: background-color 0.2s, border-radius 0.2s;
+    background-color: #7b96b2;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .line {
+    transform-origin: 0 0;
+    position: absolute;
+    border: #adacb5 1px solid;
+    height: 0px;
+    transition: all 0.5s;
+    z-index: 1;
+  }
+  .hiddenLevel1 {
+    z-index: 1;
+    top: 50% !important;
+    left: 50% !important;
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50%) rotate(180deg);
+    transition: all 0.5s;
+  }
+  .hiddenLevel1:hover {
+    cursor: auto;
+  }
+  .hiddenLine {
+    /* !important because width was originally set by js */
+    width: 0 !important;
+    border: 0 rgba(0, 0, 0, 0) solid;
+    transition: all 0.4s;
+  }
+  .level2 {
+    z-index: 1;
+    white-space: nowrap;
+    color: #2d3142;
+    padding: 4px 8px;
+    background-color: #dfefff;
+    transition: all 0.5s;
+  }
+  .level2:hover {
+    background-color: #80bfff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .hiddenLevel2 {
+    opacity: 0;
+    transform: rotate(180deg);
+  }
+  .hiddenLevel2:hover {
+    cursor: default;
+  }
+  
