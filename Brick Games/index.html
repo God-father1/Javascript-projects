@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Brick Breaker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="inner">
+            <div id="ready" class="active">
+                <div class="logo">
+                    <img src="images/logo.png" alt="logo">
+                </div>
+                <ul>
+                    <li>1. Move the spaceship using the sensible areas in the screen.</li>
+                    <li>2. The timer present the time lapsed.</li>
+                    <li>3. The fuel counter show the remain fuel.</li>
+                    <li>4. During the flight, the spaceship needs to destroy the asteroids and enemy spaceships that are presented in the space.</li>
+                    <li>5. You can shoot pressing Space Bar.</li>
+                    <li>6. If the spaceship hits a asteroid or another spaceship, you lose 10 points of fuel.</li>
+                    <li>7. Enemy spaceship needs 1 shot to be destroyed, you will get 5 points for each enemy destroyed.</li>
+                    <li>8. Asteroid needs 2 shots to be destroyed, you will get 10 points for each asteroid destroyed.</li>
+                    <li>9. If you destroy a friendly spaceship, you lose 10 points.</li>
+                    <li>10. During the flight, the spaceship needs to collect fuel in the space.</li>
+                    <li>11. You can pause the game clicking in a button pause, or pressing the letter "p".</li>
+                    <li>12. Go beyond all limits.</li>
+                    <li>Battle in Space with Star Battle Championship...</li>
+                </ul>
+                <button id="start">PLAY</button>
+            </div>
+            <div id="gameboard" class="active">
+                <div id="element"></div>
+                <div class="state">
+                    <div class="life">
+                        <div class="ball"></div>
+                        <div id="life">x 3</div>
+                    </div>
+                    <div class="round">
+                        <div>Round: </div>
+                        <div id="round">1</div>
+                    </div>
+                    <div id="score">
+                        0
+                    </div>
+                </div>
+            </div>
+            <div id="over">
+
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/Object.js"></script>
+    <script src="js/Boundary.js"></script>
+    <script src="js/Brick.js"></script>
+    <script src="js/Pad.js"></script>
+    <script src="js/Ball.js"></script>
+    <script src="js/Game.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
