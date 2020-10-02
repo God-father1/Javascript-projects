@@ -1,0 +1,32 @@
+{% extends 'budget/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'add_project.css' %}" >  
+
+</head>
+<body>
+    <div class="container">
+
+        <div class="col-lg-6 col-xl-6 mx-auto">
+          <div class="card card-signin flex-row my-5">
+            <div class="card-body">
+                <form action="" method="POST" >
+                    <div class="name">
+                    {% csrf_token %}
+                    {{form}}
+                    </div>
+                    <button type="submit" class="btn" style="margin-left: 120px;" >Start Project</button>
+                </form>
+          </div>
+        </div>
+      </div>
+      </div>
+<br><br><br><br><br><br><br><br><br><br><br>
+</body>
+{% endblock %}
+
