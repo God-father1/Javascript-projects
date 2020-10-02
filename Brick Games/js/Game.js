@@ -143,7 +143,7 @@ class Game{
                 $("#life").html('x ' + this.life);
             }else{
                 this.over = true;
-                alert("Game Over");
+                if(!alert('Game Over!!!☹️☹️☹️ Please try again.')){window.location.reload();}
             }
         }
     }
@@ -157,7 +157,7 @@ class Game{
                 $("#round").html(this.round);
             } else{
                 this.over = true;
-                alert('You Won This Game!!');
+                if(!alert('You won the game!!!😀😀😀')){window.location.reload();}
             }
         }
     }
