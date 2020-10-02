@@ -1,0 +1,56 @@
+{% extends 'budget/base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'hello.css' %}" >  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
+    <style>
+        .p
+        {
+            font-family: 'Roboto Slab', serif;
+            font-size: 150px;
+        }
+    </style>
+</head>
+<body style="background: linear-gradient(to top, #243B55, #141E30);">
+    
+<div class="text">
+    <p style="font-family: 'Roboto Slab', serif; font-size: 25px;"> My Projects : Get a detailed description of your projects and edit them.</p>
+</div> 
+<br><br><br>
+<div class="container">
+        <div class="row" style="background: linear-gradient(to top, #243B55, #141E30);">
+            {% if count == 0%}
+            <div class="col-lg-12">
+                <h5 class="grey-text" style ="color:white">You do not have any existing projects</h5>
+                <br><br>
+                <a href = "{% url 'add' %}" class="btn-large secondary" style="margin-left: 90px;margin-bottom: 50px;">
+                    <i class="material-icons white-text left">add_circle</i>
+                   <span class="badge-secondary" > Add Projects</span>
+                </a>
+            </div>
+            {% else %}
+            {% for projects in project_list %}
+            {% if user.username == projects.owner.username %}
+            <div col s12 l3>
+                <div class="card-panel">
+                    <h5><span>{{projects.name}}</span></h5>
+                    <a href="{% url 'detail' projects.slug %}" class="btn"><h6 style="margin-right: 20px;">GO</h6></a>
+                </div>
+            </div>
+            <br>
+            {% else %}
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+        </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+{% endblock %}
