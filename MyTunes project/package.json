@@ -1,0 +1,26 @@
+{
+  "name": "mytunrd",
+  "version": "1.0.0",
+  "description": "mytunes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Haroonchik/MyTunes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Haroonchik/MyTunes/issues"
+  },
+  "homepage": "https://github.com/Haroonchik/MyTunes#readme",
+  "devDependencies": {
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.1.0"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2"
+  }
+}

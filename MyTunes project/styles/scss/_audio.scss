@@ -1,0 +1,138 @@
+.audio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
+  text-align: center;
+
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &-cover {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-right: 30px;
+
+    @media (max-width: 1024px) {
+      margin-right: 0;
+    }
+
+    &:after {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background-color: #F2F2F2;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: rotate 6s linear infinite; // анимация
+    animation-play-state: paused; // paused
+    object-fit: cover;
+  }
+
+  &-header {
+    flex-grow: 1;
+    font-size: 48px;
+    @media (max-width: 1024px) {
+      width: 100%;
+    }
+    @media (max-width: 650px) {
+      font-size: 36px;
+    }
+  }
+
+  &.play .audio-img {
+    animation-play-state: running ;// play
+
+  }
+
+
+  &-progress {
+    width: 450px;
+    height: 4px;
+    border-radius: 3px;
+    background-color: #fff;
+    margin: 12px 0;
+    cursor: pointer;
+
+    @media (max-width: 950px) {
+      width: 200px;
+    }
+
+    @media (max-width: 360px) {
+      width: 150px;
+    }
+
+    &__timing {
+      background-color: #F51E38;
+      border-radius: 3px;
+      width: 0%;
+      height: 100%;
+      transition: width 0.1s linear;
+    }
+  }
+
+
+  &-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &-button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #fff;
+    outline: 0;
+  }
+
+  &-btns {
+    display: flex;
+    width: 180px;
+    justify-content: space-around;
+
+    @media (max-width: 650px) {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+
+  &-time {
+    font-size: 13px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  &-footer {
+    @media (max-width: 650px) {
+      height: 120px;
+    }
+  }
+
+  &-sound {
+    font-size: 24px !important;
+    margin-right: 10px !important;
+    min-width: 30px !important;
+  }
+
+  &-volume {
+    width: 100px !important;
+  }
+}
