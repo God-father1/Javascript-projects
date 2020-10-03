@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CovidIndia</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap" rel="stylesheet">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Muli', sans-serif;
+		}
+
+		.line {
+			text-decoration: underline;
+		}
+
+		.search-box {
+			border: solid #343A40 2px;
+
+		}
+
+		#India {
+			width: 25px;
+
+		}
+
+		.corona-update h5 {
+			text-decoration: underline;
+		}
+
+		@media only screen and (min-width: 480px) {
+			.scrollLeft {
+
+				display: none;
+
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<%- include('header'); -%>
+	
+	<!--Access the data statewise from API-->
+	<% reply = summary["Global"] %> 
+	<% vv = summary["Countries"] %> 
+
+	<section class=" corona-update container-fluid">
+		<div class="mb-4">
+			<h2 class="text-center text-uppercase pt-3 pb-0">COVID-19 LIVE STATS-(Global)</h2>
+		</div>
+		<!--All India-->
+		<div class="row text-center">
+			<div class="col-md text-dark">
+				<h5 class="font-weight-bold pt-0">All Over World</h5>
+				<h3 class="count pb-2" id="AOI"><img src="https://cdn4.iconfinder.com/data/icons/business-finance-vol-12-2/512/5-512.png" id="India"></h3>
+			</div>
+			
+			<div class="col-md text-info">
+				<h5 class="font-weight-bold">New Confirmed</h5>
+                <h3><%= reply.NewConfirmed %></h3>
+			</div>
+
+			<div class="col-md text-warning">
+				<h5 class="font-weight-bold">Total Confirmed</h5>
+                <h3><%= reply.TotalConfirmed %></h3>
+			</div>
+
+			<div class="col-md text-success">
+				<h5 class="font-weight-bold">Total Recovered</h5>
+                <h3><%= reply.TotalRecovered %></h3>
+			</div>
+
+			<div class="col-md text-danger">
+				<h5 class="font-weight-bold">Total Deaths</h5>
+                <h3><%= reply.TotalDeaths %></h3>
+			</div>
+		</div>
+
+		<!--SEARCH BOX-->
+		<div class="text-center">
+			<!--Search box-->
+			<input class=" text-center mb-3 pl-5 pr-5 pt-2 pb-2 search-box" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Countries.." title="Search here">
+			<p>[Please avoid spaces after name]</p>
+			<div class="scrollLeft">
+				<p>Scroll left-></p>
+			</div>
+		</div>
+		<!--TABLE HEADING-->
+		<div class="text-center table-responsive">
+			<table class="table table-bordered table-striped table-dark" id="corona_table">
+				<tr>
+					<th>Countries</th>
+					<th>Country Code</th>
+					<th>Date</th>
+					<th>Active</th>
+					<th>Recovered</th>
+					<th>Deaths</th>
+				</tr>
+				<tbody>
+                    <% for(var i=1; i < vv.length; i++) { %>
+                    <tr>
+                        <td><%= vv[i].Country %></td>
+                        <td><%= vv[i].CountryCode %></td>
+                        <td><%= vv[i].Date %></td>
+                        <td><%= vv[i].TotalConfirmed %></td>
+                        <td><%= vv[i].TotalRecovered %></td>
+                        <td><%= vv[i].TotalDeaths %></td>
+                    </tr>
+                    <% } %>
+                </tbody>
+			</table>
+		</div>
+	</section>
+	<%- include('footer'); -%>
+
+	
+	<script>
+		/*For search box*/
+		function myFunction() {
+			var input, filter, table, tr, td, i, txtValue;
+			input = document.getElementById("myInput");
+			filter = input.value.toUpperCase();
+			table = document.getElementById("corona_table");
+			tr = table.getElementsByTagName("tr");
+			for (i = 0; i < tr.length; i++) {
+				td = tr[i].getElementsByTagName("td")[0];
+				if (td) {
+					txtValue = td.textContent || td.innerText;
+					if (txtValue.toUpperCase().indexOf(filter) > -1) {
+						tr[i].style.display = "";
+					} else {
+						tr[i].style.display = "none";
+					}
+				}
+			}
+		}
+	</script>
+	
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
