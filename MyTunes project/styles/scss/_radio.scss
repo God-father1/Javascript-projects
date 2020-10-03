@@ -1,0 +1,163 @@
+.radio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
+  text-align: center;
+
+  &-player {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  &-cover {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-right: 30px;
+    @media (max-width: 1024px) {
+      margin-right: 0;
+    }
+
+    &:after {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background-color: #F2F2F2;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &-cover__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: rotate 6s linear infinite; // анимация
+    animation-play-state: paused; // paused
+    object-fit: cover;
+  }
+
+  &.play .radio-cover__img {
+    animation-play-state: running // play
+
+  }
+
+  &-header {
+    text-align: left;
+
+    &__big {
+      flex-grow: 1;
+      font-size: 48px;
+      @media (max-width: 650px) {
+        font-size: 36px;
+      }
+    }
+  }
+
+  &-container {
+    width: 100%;
+  }
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: center;
+    width: 140px;
+
+    &.select .radio-check {
+      border: 5px solid #aaa;
+    }
+
+    input[type=radio] {
+      position: absolute;
+      visibility: hidden;
+    }
+
+    label {
+      display: block;
+      position: relative;
+      font-weight: 300;
+      font-size: 1.35em;
+
+      margin: 5px auto;
+      z-index: 9;
+      cursor: pointer;
+      -webkit-transition: all 0.25s linear;
+    }
+
+    &:hover {
+      label {
+        color: #F51E38;
+      }
+
+      .radio-check {
+        border: 5px solid #F51E38;
+      }
+    }
+
+
+  }
+
+  &-check {
+    display: block;
+    border: 5px solid transparent;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    top: 30px;
+    left: 20px;
+    z-index: 5;
+    transition: border .25s linear;
+    -webkit-transition: border .25s linear;
+
+    img {
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-footer{
+    display: flex;
+  }
+
+  &-stop {
+    background-color: transparent;
+    border: none;
+    font-size: 56px;
+    min-width: 60px !important;
+    color: #fff;
+
+    &:disabled {
+      color: #aaa;
+      opacity: .3;
+    }
+  }
+
+  &-sound {
+    font-size: 56px !important;
+    min-width: 56px !important;
+    margin-left: 37%;
+    margin-right: 15px;
+  }
+
+  &-volume {
+    width:150px !important;
+  }
+}
