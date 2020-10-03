@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- offline -->
+    <!-- Import materialize.css
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" /> -->
+    <!-- online -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="master.css">
+    <link rel="icon" href="images\supermarket-2.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <title>Grocery Manager</title>
+</head>
+
+<body>
+    <div class="container-fluid" id="main">
+        <div class="navbar-fixed">
+            <nav class="nav-extended  light-blue darken-3 ">
+                <div class="nav-wrapper">
+                    <ul class="right" id="navBar">
+                        <li class="active"><a id="homeButton">Home</a></li>
+                        <li><a id="dashBoardButton">Dash Board</a></li>
+                        <li><a id="settingsButton">Settings</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+
+
+
+        <div class="container-fluid" id="home" style="display: block;">
+            <div class="container create-product ">
+                <div class="row create-product-icon-box" style="display:flex;">
+                    <div class="col heading">
+                        New Product
+                    </div>
+
+                    <div class="col">
+                        <a class="btn-floating btn-large waves-effect waves-light light-blue darken-2 "
+                            id="add-product-icon"><i class="material-icons">add</i></a>
+                    </div>
+
+                </div>
+                <div class="create-product-form row rounded z-depth-2" style="display: none;">
+                    <div class="heading">
+                        New Product
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix "> shopping_cart</i>
+                        <input type="text" id="new-product-name">
+                        <label for="new-product-name" class="">Product Name</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix"> monetization_on</i>
+                        <input type="text" inputmode="numeric" id="new-amount">
+                        <label for="new-amount">Amount per unit</label>
+                    </div>
+
+
+                    <button class="btn waves-effect waves-light right light-blue darken-2" name="action"
+                        id="add-product-button">Add
+                        <i class="material-icons right">send</i>
+                    </button>
+                    <button class="btn waves-effect waves-light right light-blue darken-2" s name="action"
+                        id="add-product-cancel">cancel
+                        <i class="material-icons right">cancel</i>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="container add-product row rounded z-depth-2 ">
+                <div class="heading">
+                    Add product to time line
+                </div>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix "> shopping_cart</i>
+                    <input type="text" id="product-name-timeline" class="autocomplete">
+                    <label for="product-name-timeline" class="">Product Name</label>
+                </div>
+
+
+
+                <div class="input-field col s12">
+                    <i class="material-icons prefix"> loupe</i>
+                    <input type="text" inputmode="numeric" id="count-timeline">
+                    <label for="count-timeline">Count per unit</label>
+                </div>
+
+                <button class="btn waves-effect waves-light right light-blue darken-2" type="submit" name="action"
+                    id="addProduct-timeline">Add
+                    <i class="material-icons right">send</i>
+
+                </button>
+            </div>
+
+            <div class="container time-line row rounded z-depth-2" style="display: block;">
+                <div class="heading ">
+                    Time line
+                </div>
+
+                <div class="details">
+                    <ul class="collapsible">
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="container-fluid " id="dashBoard" style="display: none;">
+            <div class="container-fluid">
+                <div class="total-products rounded container z-depth-2">
+                    <div class="heading">Total products</div>
+                    <div class="row">
+
+                        <div class="input-field search-products">
+                            <i class="material-icons prefix">search</i>
+                            <input placeholder="search products" id="search-products" type="text">
+
+                        </div>
+
+                    </div>
+                    <div class="all-products">
+
+                    </div>
+                </div>
+                <div class="charts rounded container z-depth-2">
+                    <div class="heading">All Products</div>
+                    <div class="chart-1">
+                        <canvas id="myChart"></canvas>
+
+                    </div>
+                    
+                    
+                </div>
+                <div class="charts rounded container z-depth-2">
+                    <div class="heading">Products And Their Total Price</div>
+                    <div class="chart-2">
+                        <canvas id="myChart2"></canvas>
+
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="container-fluid" id="settings" style="display: none;">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="card light-blue darken-3">
+                            <div class="card-content white-text">
+                                <span class="card-title center-align">Delete All Data</span>
+                                <p>On deleting all of your data on products will be deleted permanently and can't be
+                                    retrieved</p>
+                            </div>
+
+                        </div>
+                        <button class="btn waves-effect waves-light right red darken-3" type="submit" name="action"
+                            id="delete-data">Delete
+                            <i class="material-icons right">delete_forever</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+    <!-- offline -->
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+    <!-- online -->
+    <!-- Compiled and minified JavaScript -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+
+    <script src="app.js"></script>
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>
