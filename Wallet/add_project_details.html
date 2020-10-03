@@ -1,0 +1,119 @@
+{% extends 'budget/base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'project_detail_style.css' %}" >  
+<div class="container">
+    <section class="section section-stats">
+        <div class="row">
+            <div class="col s12 m4 14">
+                <div class="card-panel">
+                    <h6 class="bold" style="color: aliceblue;" style="font-weight: 2;">Total Budget</h6>
+                    <h1 class="bold" style="color:#33ccff;" style="font-weight: 2;">₹{{project.budget}}</h1>
+                </div>
+            </div>
+            <div class="col s12 m4 14">
+                <div class="card-panel">
+                    <h6 class="bold" style="color: aliceblue;" style="font-weight: 2;">Budget Left</h6>
+                    {% if project.budget_left > 0 %}
+                        <h1 class="bold green-text">₹{{project.budget_left}}</h1>
+                    {% elif project.budget_left == 0 %}
+                        <h1 class="bold orange-text">₹{{project.budget_left}}</h1>
+                    {% else %}
+                        <h1 class="bold red-text">₹{{project.budget_left}}</h1>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col s12 m4 14">
+                <div class="card-panel">
+                    <h6 class="bold" style="color: aliceblue;" style="font-weight: 2;">Total Transactions</h6>
+                    <h1 class="bold" style="color:rgba(255,255,0,0.7); " style="font-weight: 2;">{{project.total_transactions}}</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-expenses">
+        <div class="row">
+            <button class="btn waves-effect right modal-trigger" style=" background: linear-gradient(to right, #db1bf6,#19d7f8);" href="#expenseModal" name="expense">
+                <i class="material-icons white-text left" >add_circle</i>
+                + Add Expense
+            </button>
+        </div>
+        <br>
+        <ul class="z-depth-1">
+            {% for expense in expense_list %}
+            <li>
+                <div class="card-panel z-depth-0 expense" style="background: linear-gradient(to right, #db1bf6,#19d7f8);border-radius: 10px;" >
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <span class="title" style="color: white;font-size: large;font-weight: bolder;">{{expense.title}}</span>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="title" style="color:white;font-size:large;font-weight: bolder;" >{{expense.amount}}</span>
+                        </div>
+                        <div class="col-md-5">
+                            <span class="title bold" style="color:white;font-size:large;font-weight: bolder;">{{expense.category}}</span>
+                        </div>
+                        <div class="col-md-1">
+                            <a class="close-icon" style="cursor: pointer;" onclick="deleteExpense(this)" data-id="{{expense.id}}">
+                                <i class="material-icons red-text right">close</i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <br><br>
+            {% endfor %}
+        </ul>
+    </section>
+    <br><br><br><br><br><br><br><br><br>
+</div>
+<div id="expenseModal" class="modal" style="border-radius: 25px;">
+    <div class="modal-content">
+        <h4 style="color:#141E30;">Add Details</h4>
+        <form method="POST" style="margin-top: 65px;">
+            {% csrf_token %}
+            {{form}}
+            <label for="title" style="color:#141E30;" style="font-size: 20px;" >Title</label>
+            <input name="title" id="title">
+
+            <label for="amount" style="color:#141E30;" style="font-size: 20px;">Amount</label>
+            <input name="amount" id="amount">
+
+            <label for="category" style="color:#141E30;"style="font-size: 20px;">Category</label>
+            <input name="category" id="category"> 
+            <button type="submit"  class="btn" style="background: linear-gradient(to right, #db1bf6,#19d7f8);" >
+                <p style="color: aliceblue;">Add</p></button>
+                <br><br><br>
+        </form>
+    </div>
+</div>
+
+
+
+<script>
+    var elem = document.querySelector('.modal')
+    var instance = M.Modal.init(elem)
+
+    var elem = document.querySelector('select')
+    var instance = M.FormSelect.init(elem)
+
+    function deleteExpense(e)
+    {
+        let id = e.dataset.id
+        e.closest('li').remove()
+        fetch('',{
+            method: 'DELETE',
+            headers: {
+                'X-CSRFToken': '{{csrf_token}}'
+            },
+            body: JSON.stringify({
+                'id': id
+            }), 
+            credentials: 'same-origin',
+        } )
+        window.location.reload();
+    }
+</script>
+
+{% endblock %}
