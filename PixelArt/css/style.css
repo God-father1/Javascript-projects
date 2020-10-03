@@ -1,0 +1,516 @@
+:root {
+    --main-bg-color: #2f2f2f;
+}
+
+*,*::after,*::before {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+    font: 400 14px/16px Roboto,sans-serif;
+    overscroll-behavior: contain;
+}
+
+body {
+    box-sizing: border-box;
+    overscroll-behavior: contain;
+    height: 100%;
+    cursor: url('../img/pencil.png'), default;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    height: 100%;
+}
+
+.fa {
+    font-size: 2rem;
+}
+
+.title {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#widthrange {
+    width: 100%;
+}
+
+.leftbar {
+    background: var(--main-bg-color);
+    display: flex;
+    width: 100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+    color: #fff;
+}
+.rightbar--draw-button {
+    background: var(--main-bg-color);
+    color: #fff;
+    border: 0;
+    outline: none;
+}
+
+.leftbar div {
+    margin: 1.2rem;
+}
+
+/* Right Bar */
+.rightbar, .gamebar {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.2rem;
+    /* margin-right: 1.2rem; */
+    padding: 0 1rem 0 1rem;
+    box-shadow: -5px 7px 12px -3px rgba(0,0,0,0.75);
+    flex-grow: 0;
+    cursor: default;
+    max-width: 250px;
+    flex-shrink: 0;
+    justify-content: space-evenly;
+}
+
+.gamebar > * {
+    text-align: center;
+}
+
+
+.rightbar--gridsize {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.active {
+    color: #ffff00;
+}
+
+.rightbar--gridsize__height {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rightbar--gridcoord {
+    display: flex;
+    justify-content: center;
+}
+
+.rightbar--color {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rightbar--animation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rightbar--frames {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rightbar--themes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rightbar-savedframe {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mainboard */
+.mainboard {
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.mainboard-container {
+    display: flex;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 96%;
+}
+
+.cell {
+    border: 1px solid #eee;
+    flex: 1;
+}
+
+.cell-rounded {
+    border-radius: 50%;
+}
+
+.mainboard-outline .cell {
+    border: none !important;
+}
+
+p {
+    
+    margin-bottom: 5px;
+    padding-right: 5px;
+    text-align: center;
+    /* margin-bottom: 1.5rem; */
+    font-size: 1.5rem;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex: 1;
+}
+
+.color-list {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.form-control {
+    padding: 5px 5px 10px 5px;
+    width: 80%;
+}
+
+.rightbar--draw-button {
+    width: 100%;
+    line-height: 1.5;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+.rightbar--color-box {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.rightbar--color-box input {
+    flex: 1;
+    border: 0;
+}
+
+.rightbar--frames__box {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background-color: #000;
+    margin-right: 1rem;
+}
+
+.rightbar--frames__circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.shake {
+    animation: shake 0.8s infinite;
+    transform: translate3d(0, 0, 0);
+}
+
+@keyframes shake {
+    0% {transform: translateX(0);} 
+    10%, 30%, 50%, 70%, 90% {transform: translateX(-8px);} 
+    20%, 40%, 60%, 80%,100% {transform: translateX(8px);} 
+} 
+
+.rightbar--frames-container {
+    display: flex;
+}
+
+.rightbar--progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Toggle Switch */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  } */
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  .leftbar--gridcoord {
+      display: none;
+  }
+
+  /* slider */
+
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 0px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+/* Toggle Switch */
+
+.rightbar--lg,.rightbar--themes__cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightbar--frames-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.color-list {
+    margin: 0 0.3rem;
+}
+
+.fa:hover {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Dropdown */
+
+.btn-custom {
+    line-height: 1.5;
+    background-color: var(--main-bg-color);
+    color: #fff;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: none;
+  }
+  
+  .dropdown-content {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    padding: 0.75rem 0;
+    background-color: #f1f1f1;
+    z-index: 1;
+  }
+  
+  
+  .dropdown:hover .dropdown-content {display: flex;}
+
+  .leftbar > * {
+      flex: 1;
+  }
+
+/* Dropdown */
+
+/* @media screen and (max-width: 900px) {
+    html {
+        font-size: 50%;
+    }
+} */
+
+@media screen and (max-width: 900px) {
+    html {
+        font-size: 50%;
+    }
+    .container {
+        flex-direction: column-reverse;
+    }
+
+
+    .rightbar--gridsize__width, .rightbar--gridsize__height {
+        width: 60px;
+    }
+
+    .dropdown {
+        display: inline-block;
+    }
+
+    p {
+        margin-bottom: .2rem;
+    }
+
+    .rightbar--frames-container-lg,.rightbar--lg,.rightbar--themes__cont-lg {
+        display: none;
+    }
+
+    .rightbar--gridcoord {
+        display: none;
+    }
+
+    .rightbar--frames__box, .rightbar--frames__circle {
+        width: 15px;
+        height: 15px;
+    }
+
+    .form-control {
+        padding: 0;
+    }
+
+
+    .rightbar,.gamebar {
+        margin-bottom: .5rem;
+        flex-direction: row;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .rightbar, .gamebar > * {
+        margin-right: 0.2rem;
+    }
+
+    .rightbar--frames {
+        justify-content: center;
+    }
+
+    .rightbar--themes {
+        justify-content: center;
+    }
+
+    .leftbar {
+        align-items: center;
+        width: 100%;
+    }
+
+    .leftbar--gridcoord {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .leftbar--gridcoord span {
+        margin-left: 0.3rem;
+        font-size: 2rem;
+    }
+
+    .rightbar--color {
+        justify-content: center;
+    }
+
+    .title {
+        display: none;
+    }
+
+    .rightbar--draw {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .color-list {
+        width: 15px;
+        height: 15px;
+    }
+
+    .mainboard-container {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        border: none;
+    }
+
+    .rightbar, .gamebar {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 0 1rem 0;
+        margin-bottom: 1rem;
+    }
+
+    .leftbar {
+        flex-direction: row;
+    }
+
+}

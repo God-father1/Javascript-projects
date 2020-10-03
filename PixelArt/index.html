@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>PixelArt</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="leftbar">
+            <div class="leftbar--logo">
+                <i class="fa fa-gamepad" aria-hidden="true" data-menu="game"></i>
+            </div>
+            <div class="leftbar--edit active">
+                <i class="fa fa-pencil" aria-hidden="true" data-menu="edit"></i>
+            </div>
+            <div class="leftbar--eraser">
+                <i class="fa fa-eraser" aria-hidden="true" data-menu="eraser"></i>
+            </div>
+            <div class="leftbar--clear">
+                <i class="fa fa-refresh" aria-hidden="true" data-menu="clear"></i>
+            </div>
+            <div class="leftbar--eyedropper">
+                <i class="fa fa-paint-brush" aria-hidden="true" data-menu="eyedropper"></i>
+            </div>
+            <div class="leftbar--togglegrid">
+                <i class="fa fa-th-large" aria-hidden="true" data-menu="togglegrid"></i>
+            </div>
+            <div class="leftbar--undo">
+                <i class="fa fa-reply" aria-hidden="true" data-menu="undo"></i>
+            </div>
+            <div class="leftbar--redo">
+                <i class="fa fa-share" aria-hidden="true" data-menu="redo"></i>
+            </div>
+            <div class="leftbar--download">
+                <i class="fa fa-download" aria-hidden="true" data-menu="download"></i>
+            </div>
+            <div class="leftbar--gridcoord">
+                <span id="rownum">1</span><span>:</span><span id="colnum">1</span>
+            </div>
+        </div>
+        <div class="mainboard-container">
+            
+            <div class="mainboard"></div>
+        </div>
+        <div class="rightbar">
+            <h2 class="title"></h2>
+            <div class="rightbar--progress">
+                <input type="range" class="slider" min="1" max="100" value="100" id="widthrange">
+            </div>
+            <div class="rightbar--gridsize">
+                <div class="rightbar--gridsize__height">
+                    <p>Height</p>
+                    <input class="form-control" type="number" name="height" id="height" value="">
+                </div>
+                <div class="rightbar--gridsize__width">
+                    <p>Width</p>
+                    <input class="form-control" type="number" name="width" id="width" value="">
+                </div>
+            </div>
+            <div class="rightbar--draw">
+                <button class="rightbar--draw-button" data-resize="resize">Grid</button>
+            </div>
+            <div class="rightbar--gridcoord">
+                <div class="rightbar--gridcoord__row">
+                    <p>Row: <span id="rownum">1</span></p>
+                </div>
+                <div class="rightbar--gridcoord__col">
+                    <p>Col: <span id="colnum">1</span></p>
+                </div>
+            </div>
+            <div class="rightbar--color">
+                <div class="dropdown">
+                    <button class="btn-custom">Colors</button>
+                    <div class="dropdown-content">
+                        <div class="rightbar--color-box">
+                            <div class="color-list" data-cellcolor="#000000" style="background-color: #000000;"></div>
+                            <div class="color-list" data-cellcolor="#ff6347" style="background-color: #ff6347;"></div>
+                            <div class="color-list" data-cellcolor="#1e90ff" style="background-color: #1e90ff;"></div>
+                        </div>
+                        <div class="rightbar--color-box">
+                            <div class="color-list" data-cellcolor="#ff4500" style="background-color: #ff4500;"></div>
+                            <div class="color-list" data-cellcolor="#ffa500" style="background-color: #ffa500;"></div>
+                            <div class="color-list" data-cellcolor="#ffff00" style="background-color: #ffff00;"></div>
+                        </div>
+                        <div class="rightbar--color-box" style="width: 50%;">
+                            <input type="color" id="colorpicker" name="colorpicker" value="#000000" data-customcolor="true">
+                        </div>
+                    </div>
+                </div>
+                <div class="rightbar--lg">
+                    <p>Colors</p>
+                    <div class="rightbar--color-box">
+                        <div class="color-list" data-cellcolor="#000000" style="background-color: #000000;"></div>
+                        <div class="color-list" data-cellcolor="#ff6347" style="background-color: #ff6347;"></div>
+                        <div class="color-list" data-cellcolor="#1e90ff" style="background-color: #1e90ff;"></div>
+                    </div>
+                    <div class="rightbar--color-box">
+                        <div class="color-list" data-cellcolor="#ff4500" style="background-color: #ff4500;"></div>
+                        <div class="color-list" data-cellcolor="#ffa500" style="background-color: #ffa500;"></div>
+                        <div class="color-list" data-cellcolor="#ffff00" style="background-color: #ffff00;"></div>
+                    </div>
+                    <div class="rightbar--color-box" style="width: 50%;">
+                        <input type="color" id="colorpicker" name="colorpicker" value="#000000" data-customcolor="true">
+                    </div>
+                </div>              
+            </div>
+
+            <div class="rightbar--frames">
+                <div class="dropdown">
+                    <button class="btn-custom">Frames</button>
+                    <div class="dropdown-content">
+                        <div class="rightbar--frames-container">
+                            <div class="rightbar--frames__box" data-frame="box"></div>
+                            <div class="rightbar--frames__circle" data-frame="circle"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rightbar--frames-container rightbar--frames-container-lg">
+                    <p>Frames</p>
+                    <div class="rightbar--frames__box" data-frame="box"></div>
+                    <div class="rightbar--frames__circle" data-frame="circle"></div>
+                </div>
+            </div>
+
+            <div class="rightbar--themes">
+                <div class="dropdown">
+                    <button class="btn-custom">Themes</button>
+                    <div class="dropdown-content">
+                        <div class="rightbar--themes__cont">
+                            <div class="rightbar--color-box">
+                                <div class="color-list" data-themecolor="#000000" style="background-color: #000000;"></div>
+                                <div class="color-list" data-themecolor="#ff6347" style="background-color: #ff6347;"></div>
+                                <div class="color-list" data-themecolor="#1e90ff" style="background-color: #1e90ff;"></div>
+                            </div>
+                            <div class="rightbar--color-box">
+                                <div class="color-list" data-themecolor="#3cb371" style="background-color: #3cb371;"></div>
+                                <div class="color-list" data-themecolor="#808080" style="background-color: #808080;"></div>
+                                <div class="color-list" data-themecolor="#6a5acd" style="background-color: #6a5acd;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rightbar--themes__cont rightbar--themes__cont-lg">
+                    <p>Themes</p>
+                    <div class="rightbar--color-box">
+                        <div class="color-list" data-themecolor="#000000" style="background-color: #000000;"></div>
+                        <div class="color-list" data-themecolor="#ff6347" style="background-color: #ff6347;"></div>
+                        <div class="color-list" data-themecolor="#1e90ff" style="background-color: #1e90ff;"></div>
+                    </div>
+                    <div class="rightbar--color-box">
+                        <div class="color-list" data-themecolor="#3cb371" style="background-color: #3cb371;"></div>
+                        <div class="color-list" data-themecolor="#808080" style="background-color: #808080;"></div>
+                        <div class="color-list" data-themecolor="#6a5acd" style="background-color: #6a5acd;"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="gamebar">
+            <h2 class="title"></h2>
+            <div class="gamebar--highscore">
+                <p>High Score</p>
+                <span class="highscorecount">0</span>
+            </div>
+            <div class="gamebar--scores">
+                <p>Current Score</p>
+                <span class="score">0</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="./lib/html2canvas.min.js"></script>
+    <script src="./lib/FileSaver.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
