@@ -1,0 +1,130 @@
+/*
+CSS Styles
+*/
+
+* {
+  margin: auto;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.nav1 {
+  background-color: gray !important;
+}
+
+.nav-link {
+  color: navy;
+}
+
+.book-btn {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #000;
+}
+
+/*add full-width input fields*/
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+}
+
+input[type="number"] {
+  padding: 10px 20px;
+}
+
+/* set a style for all buttons*/
+button {
+  background-color: navy;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  cursor: pointer;
+  width: 100%;
+}
+
+/*set styles for the cancel button*/
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #ff2e00;
+}
+
+/*float cancel and signup buttons and add an equal width*/
+.cancelbtn,
+.addBook {
+  float: left;
+  width: 50%;
+}
+
+/*add padding to container elements*/
+.container {
+  padding: 16px;
+}
+
+/*define the modal’s background*/
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+
+/*define the modal-content background*/
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/*define the close button*/
+
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  color: #000;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/*define the close hover and focus effects*/
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#alert-form{
+  display: none;
+}
+
+@media screen and (max-width: 300px) {
+  .cancelbtn,
+  .addBook {
+    width: 100%;
+  }
+}

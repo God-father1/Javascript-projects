@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no" />
+
+  <title>Library</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body onload="render()">
+  <main>
+    <div class="container">
+      <h2 class="text-center">Welcome to our library, please add a book below</h2>
+      <div class="book-btn">
+        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Add a book</button>
+      </div>
+      <div id="id01" class="modal">
+        <div class="modal-content animate">
+          <div id="alert-form" class="alert-danger w-100 text-center pt-2">
+            <p>Please fill in all fields</p>
+          </div>
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+          <form class="container" id='form'>
+            <div class="form-group">
+              <label for="book_title"><b>Book Title</b></label>
+              <input type="text" placeholder="Book Title" id="book_title" class="form-control" required>
+            </div>
+      
+            <div class="form-group">
+              <label for="book_author"><b>Author</b></label>
+              <input type="text" placeholder="Author" id="book_author" class="form-control" required>
+            </div>
+      
+            <div class="form-group">
+              <label for="pages"><b>No of Pages</b></label>
+              <input type="number" placeholder="Num. Pages" id="pages" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+              <div class="form-check">
+                <input form-check-input type="radio" name="readAlready" value="read" class="form-check-input" id="read">
+                <label class="form-check-label" for="read">Read already</label>
+              </div>
+              <div class="form-check">
+                <input form-check-input type="radio" name="readAlready" value="not read" class="form-check-input" id="not-read">
+                <label class="form-check-label" for="not-read">Not read yet</label>
+              </div>
+            </div>
+
+            <div class="clearfix">
+              <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                class="cancelbtn">Cancel</button>
+              <button id="submitBtn" class="addBook" type="button">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div id="books-list" class="row">
+      </div>
+    </div>
+    
+  </main>
+
+
+  <footer>
+    <p class="text-center">copyright &copy;. Designed by Miguel and Dami</p>
+  </footer>
+  <script>
+     var modal = document.getElementById('id01');
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      } 
+  </script>
+  <script src="js/library.js"></script>
+</body>
