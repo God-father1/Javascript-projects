@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Markdown editor</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body, html {
+                margin: 0;
+                height: 100%;
+            }
+
+            #app {
+                height: 100%;
+            }
+
+            .editor {
+                display: flex;
+                flex-direction: row;
+                height: 100%;
+            }
+
+            .editor__input {
+                border: 0;
+                font: inherit;
+                outline: none;
+            }
+
+            .editor__input, .editor__preview {
+                width: 50%;
+                height: 100%;
+                padding: 20px;
+            }
+
+            .editor__preview {
+                background-color: #eee;
+                padding-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <editor></editor>
+        </div>
+
+        <script src="https://unpkg.com/vue"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
+        <script>
+            let Preview = {
+                props: ['text'],
+                template: `<div class="editor__preview" v-html="markdownText"></div>`,
+                computed: {
+                    markdownText() {
+                        return marked(this.text, { sanitize: true })
+                    }
+                }
+            }
+
+            let Editor = {
+                components: {
+                    'preview': Preview
+                },
+                data() {
+                    return {
+                        text: ''
+                    }
+                },
+                template: `
+                    <div class="editor">
+                        <textarea v-model="text" rows="10" cols="30" class="editor__input"></textarea>
+                        <preview :text="text"></preview>
+                    </div>
+                `
+            }
+
+            let app = new Vue({
+                el: "#app",
+                components: {
+                    'editor': Editor
+                }
+            })
+        </script>
+    </body>
+</html>
