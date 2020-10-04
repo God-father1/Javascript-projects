@@ -1,0 +1,136 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+	font-size: 35px;
+}
+h2 {
+	font-size: 30px;
+}
+h3 {
+	font-size: 25px;
+}
+p {
+	font-size: 16px;
+}
+
+body {
+	background: #490a3d;
+}
+
+#nav {
+	color: #fff;
+	font-size: 2em;
+	font-family: sans-serif;
+}
+.quotemark {
+	position: relative;
+	top: -12px;
+	padding-right: 10px;
+}
+
+blockquote {
+	border-left: 10px solid #490a3d;
+	margin: 30px 10px;
+	padding: 10px 30px;
+}
+blockquote:before {
+	color: #ccc;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+	vertical-align: -0.4em;
+}
+blockquote h1,
+h2,
+h3,
+p {
+	display: inline;
+}
+blockquote footer {
+	font-size: 18px;
+	text-align: right;
+	color: transparent;
+}
+
+.quotebox {
+	background: #fff;
+	max-width: 500px;
+	min-height: 100px;
+	border: 1px solid #222;
+	border-radius: 5px;
+	margin: 10px;
+	margin-top: 10%;
+}
+
+.quotebutton {
+	display: inline-block;
+	padding: 6px 12px;
+}
+#quotesource {
+	margin-top: 20px;
+}
+
+.btn {
+	margin-bottom: 10px;
+}
+
+.social-icons {
+	padding: 6px 12px;
+	display: inline-block;
+}
+.social-icons .fab {
+	font-size: 1.8em;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.social-icons.icon-rounded .fab {
+	border-radius: 5px;
+}
+.social-icons .fab:hover,
+.social-icons .fab:active {
+	color: #fff;
+	-webkit-box-shadow: 1px 1px 3px #333;
+	-moz-box-shadow: 1px 1px 3px #333;
+	box-shadow: 1px 1px 3px #333;
+}
+.social-icons .fa-twitter {
+	background-color: #490a3d;
+	border-color: none;
+}
+
+.btn-primary {
+	width: 100px;
+	height: 40px;
+	border: none;
+	background: #490a3d;
+}
+
+@media only screen and (max-width: 768px) {
+	#quotetext {
+		font-size: 25px;
+	}
+	.container {
+		margin-right: 20px;
+	}
+}
+@media only screen and (max-width: 320px) {
+	#quotetext {
+		font-size: 18px;
+	}
+}
