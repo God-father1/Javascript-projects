@@ -1,0 +1,42 @@
+* {
+    margin : 0;
+    padding: 0;
+    
+}
+
+body {
+    background-color: #edc988;
+    color: #132743;
+    font-family: sans-serif;
+    font-size: 80px;
+}
+
+.topHalf {
+    min-height: 50%;
+    max-height: auto;
+    text-align: center;
+    background-color: #d7385e;
+    color: #f8efd4;
+    padding: 20px;
+}
+
+h1 {
+    margin: 3% 6%;
+    padding: 20px;
+}
+
+.bottomHalf {
+    min-height: 50%;
+    max-height: auto;
+    text-align: center;
+    background-color: #edc988;
+}
+
+#outputDiv {
+    padding: 20px;
+    font-weight: 200px;
+    margin: 3% 6%;
+}
+
+
+
