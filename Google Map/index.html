@@ -1,1 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GoogleMap</title>
+    <style>
+        #map{
+            height:400px;
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>MY GoogleMap</h1>
+    <div id="map"></div>
 
+
+    <script>
+        function initMap() {
+            //map options
+            var options = {
+                zoom :8,
+                center:{lat:30.1471,lng:78.7745}
+            }
+
+            //new map
+
+            var map = new
+            google.maps.Map(document.getElementById('map'),options);
+
+
+
+            //listen for click  on map
+            google.maps.event.addListener(map,'click',
+            function(event){
+                //add marker
+                addMarker({coords:event.latLng})
+            })
+            /*
+            //add marker
+            var marker = new google.maps.Marker({
+                position:{lat:30.1471,lng:78.7745},
+                map:map,
+                icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+            });
+
+            var infoWindow = new google.maps.InfoWindow({
+                content:'<h1>Lynn MA</h1>'
+            });
+
+            marker.addListener('click',function() {
+                infoWindow.open(map,marker);
+            });
+
+            */
+
+           //ARRAY OF MARKERS
+
+           var markers = [
+               {
+                   coords:{lat:30.1471,lng:78.7540},
+                   iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+                   content: '<h1>Lynn MA</h1>'
+               },
+               {
+               coords:{lat:30.1471,lng:78.7540},
+                content:'<h1>UTTRAKHAND</h1>'
+               },
+               {
+                coords:{lat:30.1271,lng:78.7240}
+               }
+           ]
+
+           //LOOP THROUGH MARKERS
+               for(var i = 0 ;i < markers.length;i++){
+
+                   addMarker(markers[i]);
+               }
+
+           
+            ///add marker function
+            function addMarker(props){
+                var marker = new google.maps.Marker({
+                position:props.coords,
+                map:map,
+                //icon:props.iconImage
+            });
+
+
+            //check for custom icon
+            if(props.iconImage){
+                marker.setIcon(props.iconImage);
+            }
+
+            //check content
+            if(props.content) {
+                var infoWindow = new google.maps.InfoWindow({
+                    content:props.content
+                });
+
+                marker.addListener('click',function(){
+                    infoWindow.open(map, marker);
+                });
+            }
+            }
+        }
+    </script>
+    <script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCziIbbGQTF1zapzUUUQZjgir5nn_bMygM&callback=initMap">
+    </script>
+</body>
+</html>
