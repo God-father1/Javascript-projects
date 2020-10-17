@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS Sprite Generator &amp; Ruler</title>
+	<link href="spritestyles.css" rel="stylesheet">
+	<script src="js/external/jquery.js"></script>
+	<script src="spritejs.js"></script>
+	<script src="js/external/html2canvas.js"></script>
+	<script src="js/external/canvas2image.js"></script>
+	<script src="js/external/jquery-ui.min.js"></script>
+</head>
+<body>
+	
+	<div class="sprite-header">
+		<a href="#">
+			<img src="img/sprite-logo.png">
+		</a>
+
+
+	</div>
+
+	<div class='main-wrapper'>
+
+		<div class="sprite-canvas-wrapper">
+			
+			<div class="canvas-wrapper">
+				
+				<div class="sprite-main-canvas"></div>
+				<div class="resize-sprite"></div>
+				
+			</div>
+			<span class="tip" style="">Tip : Double Click on image to show Delete Button.</span>
+			<div class="deleteImage uploadBtn">Delete Image</div><br>
+
+			<a class="uploadBtn" id="upload" href="#">Upload</a>
+			<input type="file" id="fileInput" accept="images/*">
+			<a class="uploadBtn" href="#" id="download" >Download</a>
+			<div style="font-size:14px;margin-top:15px">If you are having problem in using this, then read the documentation at <a href="/help.html">DOCUMENTATION</a> or click here to mail me at my <a href="mailto:shehrozz321@gmail.com?Subject=CSS%20Sprite%20Generator" target="_top">EMAIL</a>.</div>
+			<div id="createdCanvas" style="display:none"></div>
+
+		
+		</div>
+		<div class="css-wrapper">
+			
+			<ul class="css-list"></ul>
+
+		</div>
+
+	</div>
+
+
+
+
+</body>
+</html>

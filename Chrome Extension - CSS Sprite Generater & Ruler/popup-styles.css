@@ -1,0 +1,114 @@
+body{
+  margin:0px;
+  width:170px;
+}
+.heading{
+  margin: 0px;
+    padding: 0px;
+    text-align: center;
+    font-size: 16px;
+    color: rgba(249, 90, 42, 0.92);
+}
+.options-list{
+  width:100%;
+  padding: 0px;
+    margin-bottom: 0px;
+}
+.options-list li{
+    padding-left: 7px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+  margin: 0px;
+    list-style-type: none;
+    width: 100%;
+    background: rgba(204, 204, 204, 0.27);
+    border-bottom: 1px solid #ccc;
+}
+.options-list li:hover{
+  background: rgba(204, 204, 204, 0.16);
+}
+.options-list li a{
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    padding-left: 7px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    padding-right: 83px;
+}
+.options-list li:last-child{
+  border-bottom:none;
+}
+.developer-info{
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.developer-info:hover,.developer-info:focus{
+    text-decoration: underline;
+}
+.developer-info-tooltip{
+
+    display: block;
+    padding:5px;
+    position: absolute;
+    z-index: 1070;
+
+}
+.tooltip {
+    position: relative;
+    cursor: help;
+    display: inline-block;
+    text-decoration: none;
+    color: #222;
+    outline: none;
+    margin-left: 48px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.tooltip span {
+    visibility: hidden;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    z-index: 999;
+    width: 84px;
+    margin-left: -53px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    opacity: 1;
+    background-color: #ddd;
+    background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 1px 0 rgba(255,255,255,.5) inset;
+    text-shadow: 0 1px 0 rgba(255,255,255,.4);
+}
+
+.tooltip:hover {
+  border: 0; /* IE6 fix */
+  text-decoration: underline;
+}
+
+.tooltip:hover span {
+  visibility: visible;
+}
+
+.tooltip span:before,
+.tooltip span:after {
+  content: "";
+  position: absolute;
+  z-index: 1000;
+  bottom: -7px;
+  left: 50%;
+  margin-left: -8px;  
+  border-top: 8px solid #ddd;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;        
+  border-bottom: 0;  
+}
+
+.tooltip span:before {
+  border-top-color: #ccc;
+  bottom: -8px;
+}
