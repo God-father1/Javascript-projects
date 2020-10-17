@@ -1,0 +1,111 @@
+<html>
+	<head>
+		<title>MeasureIt Options</title>
+
+		<style>
+			@import url(http://fonts.googleapis.com/css?family=Roboto:100,300,400,700);
+
+			* {
+				margin: 0;
+				padding: 0;
+
+				font: 16px/125% 'Roboto', sans-serif;
+
+				box-sizing: border-box;
+			}
+
+			html {}
+			body { background: #f5f5f5; }
+
+			.box {
+				border: 1px solid rgba(0, 0, 0, .15);
+				margin: 1em auto 0 auto;
+				padding: 1rem 2rem 1.5rem 2rem;
+				width: 400px;
+
+				background: #fff;
+
+				border-radius: 3px;
+				box-shadow: 0 5px 10px -5px rgba(0, 0, 0, .15);
+			}
+
+			h1 {
+				border-bottom: 1px solid rgba(0, 0, 0, .15);
+				margin: 0 0 .5rem 0;
+
+				font-size: 3rem;
+				font-weight: 100;
+			}
+			h2 {
+				padding: 0 0 .5rem 0;
+
+				font-size: 1.5rem;
+				font-weight: 700;
+			}
+			p { padding: 0 0 1rem 0; }
+			p:last-child { padding: 0; }
+
+			input {
+				border: 1px solid rgba(0, 0, 0, .15);
+				padding: .25rem .5rem;
+			}
+			input[type=color] {
+				display: inline-block;
+				height: 2.5rem;
+				vertical-align: middle;
+				width: 3.5rem;
+			}
+			button {
+				border: 0 none;
+				padding: .5rem 1rem;
+
+				background-color: #ddd;
+				cursor: pointer;
+				transition: background .15s ease-out;
+			}
+			button:hover { background-color: #eee; }
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<h1>Colors</h1>
+			<h2>Background</h2>
+			<p>
+				<label for="backgroundColor">Color</label>
+				<input id="backgroundColor" type="color" value="" />
+			</p>
+			<p>
+				<label for="backgroundOpacity">Opacity</label>
+				<input id="backgroundOpacity" type="number" min="0" max="100" increment="1" value="" />
+			</p>
+
+			<h2>Ruler</h2>
+			<p>
+				<label for="rulerColor">Color</label>
+				<input id="rulerColor" type="color" value="" />
+			</p>
+			<p>
+				<label for="rulerOpacity">Opacity</label>
+				<input id="rulerOpacity" type="number" min="0" max="100" increment="1" value="" />
+			</p>
+		</div><!-- END .box -->
+
+		<div class="box">
+			<h1>Misc</h1>
+			<p>
+				<input id="showAdvToolbar" type="checkbox" />
+				<label for="showAdvToolbar">Show Area, Diagonal Calculations</label>
+			</p>
+		</div><!-- END .box -->
+
+		<div class="box">
+			<p>
+				<button id="save">Save</button>
+				<span id="status"></span>
+			</p>
+		</div><!-- END .box -->
+	</body>
+
+	<script src="options.js"></script>
+</html>

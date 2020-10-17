@@ -1,0 +1,40 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+    "author": "Shehroz Sheikh",
+    "name": "CSS Sprite Generator & Ruler",
+    "version": "1.0",
+    "homepage_url": "https://facebook.com/shehroz.21",
+    "short_name" : "CSS Sprite Generator",
+    "icons": {
+        "16": "/img/icons/icon.png",
+        "48": "/img/icons/icon.png",
+        "128": "/img/icons/icon.png"
+    },
+
+    "description": "This will generate a sprite Image by dragging and dropping Images & also measure the size of different contents on Websites.",
+    "permissions": [ "tabs", "http://*/*", "storage" ,"activeTab","https://*/","<all_urls>"],
+    "browser_action": {
+       "default_icon": "/img/icons/icon.png",
+       "default_popup": "/popup.html",
+        "name": "Sprite Generator"
+
+    },
+    "content_scripts": [ {
+      "css": ["measureStyles.css" ],
+      "matches": [ "http://*/*" ,"https://*/*","file:///*","<all_urls>"]
+    } ],
+
+    
+
+    "background": {
+
+        "scripts":["background.js"],
+        "css": ["measureStyles.css" ]
+    },
+    "web_accessible_resources":["img/grid.png","img/sprite_back.png","img/border-copy.png","img/border.png","img/info-bg.png","measureit.css", "img/resize-icon.png","js/external/canvasTextLibrary.js"],
+    "manifest_version": 2,
+    "options_page" : "help.html"
+}
+
+
