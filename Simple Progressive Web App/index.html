@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#00897B" />
+    <link rel="stylesheet" href="css/materialize.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="assets/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="assets/css/brands.min.css" rel="stylesheet" />
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="/images/icons/icon-96x96.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#fff" />
+    <meta name="theme-color" content="#fff" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Header Content -->
+
+    <nav class="black lighten-1" role="navigation">
+      <div class="nav-wrapper container">
+        <a href="#" class="brand-logo" id="logo-container">UpResto</a>
+        <a href="#" class="sidenav-trigger" data-target="nav-mobile">☰</a>
+
+        <ul class="topnav right hide-on-med-and-down"></ul>
+        <ul class="sidenav" id="nav-mobile"></ul>
+      </div>
+    </nav>
+
+    <!-- Header Content -->
+
+    <!-- Main Content -->
+    <main>
+      <div id="body-content"></div>
+    </main>
+    <!-- Main Content -->
+
+    <!-- Footer Content -->
+    <footer class="page-footer black">
+      <div class="container">
+        <div class="row">
+          <div class="flexbox">
+            <div class="col l4 s12 center-align">
+              <h5 class="white-text">Links</h5>
+              <ul>
+                <li>
+                  <a class="grey-text text-lighten-3" href="#!">Catering</a>
+                </li>
+                <li>
+                  <a class="grey-text text-lighten-3" href="#!">Community</a>
+                </li>
+                <li>
+                  <a class="grey-text text-lighten-3" href="#!">Careers</a>
+                </li>
+                <li>
+                  <a class="grey-text text-lighten-3" href="#!">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col l4 s12 social-icons center-align">
+              <a href="#"><i class="fab fa-facebook-f fa-3x"></i></a>
+              <a href="#"><i class="fab fa-instagram fa-3x"></i></a>
+              <a href="#"><i class="fab fa-twitter fa-3x"></i></a>
+            </div>
+            <div class="col l4 s12 center-align">
+              <ul style="display: grid; grid-template-columns: repeat(2, 1fr)">
+                <li><a href="#" class="white-text">Terms & Condition</a></li>
+                <li class="grey-text">© 2020 UpResto</li>
+                <li><a href="#" class="white-text">Privacy & Policy</a></li>
+                <li class="grey-text">All Rights Reserved.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container center-align">
+          UpResto by <a href="https://github.com/Pazmy">Pazmy</a>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer Content -->
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then(function () {
+            console.log("Service Worker Registered");
+          })
+          .catch(function () {
+            console.log("Failed Registered Service Worker");
+          });
+      } else {
+        console.log("Browser doesn't support Service Worker");
+      }
+    </script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/nav.js"></script>
+  </body>
+</html>
