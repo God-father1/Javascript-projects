@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+   	     <title> Form Validation </title>
+   	     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+   	     <link href="codding form styles.css" type= "text/css" rel="stylesheet">
+   	</head>
+   	<body>
+
+      <div class="container">
+      	 <div class="header">
+      	 	<h2>CODING BUDDIES REGISTRATION FORM</h2>
+      	 </div>
+      	 <form class="form" id="form">
+      	 	<div class="form-control">
+      	 		<label>Username</label>
+      	 		<input type="text" name="username" id="username" placeholder="Enter Your Username" autocomplete="off" onkeyup="validateusername(this.value)">
+      	 		<i class="fas fa-check-circle"></i>
+      	 		<i class="fas fa-exclamation-circle"></i>
+                <small> Error Msg </small>
+            </div>
+            <div class="form-control">
+      	 		<label>Email</label>
+      	 		<input type="email" name="email" id="email" placeholder="Enter Your Email" autocomplete="off" onkeyup="validateemail(this.value)">
+      	 		<i class="fas fa-check-circle"></i>
+      	 		<i class="fas fa-exclamation-circle"></i>
+                <small> Error Msg </small>
+            </div>
+            <div class="form-control">
+               <label>School / College / Organization name</label>
+               <input type="text" name="institute" id="institute" placeholder="Enter name accordingly" autocomplete="off" 
+               onkeyup="validatecollegename(this.value)">
+               <i class="fas fa-check-circle"></i>
+               <i class="fas fa-exclamation-circle"></i>
+                <small> Error Msg </small>
+            </div>
+            <div class="form-control">
+      	 		<label>Phone Number</label>
+      	 		<input type="number" name="phone" id="phone" placeholder="Enter Your Phone Number" autocomplete="off" onkeyup="validatephone(this.value)">
+      	 		<i class="fas fa-check-circle"></i>
+      	 		<i class="fas fa-exclamation-circle"></i>
+                <small> Error Msg </small>
+            </div>
+            <div class="form-control">
+      	 		<label>Password</label>
+      	 	<input type="password" name="password" id="password" placeholder="Enter Your Password" autocomplete="off" onkeyup="validatepassword(this.value)">
+      	 		<i class="fas fa-check-circle"></i>
+      	 		<i class="fas fa-exclamation-circle"></i>
+                <small> Error Msg </small>
+            </div>
+            <div class="form-control">
+      	 		<label>Retype Password</label>
+      	 		<input type="password" name="cnfpassword" id="cnfpassword" placeholder="Enter Your Password again" autocomplete="off" 
+               onkeyup="validatecnfpass(this.value)">
+      	 		<i class="fas fa-check-circle"></i>
+      	 		<i class="fas fa-exclamation-circle"></i>
+                <small> Error Msg </small>
+            </div>
+            <div class="box">
+            <input type="checkbox" name="terms" id="terms" onchange="validatecheckbox(this)">
+            <label for="terms"> I have read all the Terms and Conditions</label>
+            <small> Agree to Terms & Conditions checkbox </small>
+            </div>
+
+            <input type="submit" class="btn" value="Submit" name="submit" >
+            
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            <script src="codeform.js"></script>
+   	</body>
+</html>
