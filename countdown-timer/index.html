@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Countdown Timer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles.css" />
+    <script src="./scripts.js"></script>
+  </head>
+  <body>
+    <div class="content">
+      <header class="header">
+        <h1>Countdown Timer</h1>
+      </header>
+      <div class="form">
+        <table class="formTable" align="center">
+          <tr>
+            <th>Hours</th>
+            <th>Mins</th>
+            <th>Secs</th>
+          </tr>
+          <tr>
+            <td>
+              <input type="number" name="hours" id="hours" value="1" />
+            </td>
+            <td>
+              <input type="number" name="mins" id="mins" value="10" />
+            </td>
+            <td>
+              <input type="number" name="secs" id="secs" value="0" />
+            </td>
+          </tr>
+        </table>
+        <div class="buttonSection">
+          <button onclick="startTimer()">Start</button>
+          <button onclick="toggleDarkMode()">Dark Mode</button>
+        </div>
+      </div>
+      <div>
+        <p id="timer" class="counter">Click Start</p>
+      </div>
+    </div>
+    <footer class="footer">
+      <span
+        >Developed by <a href="" target="_blank">Abhijith</a> |
+        <a href="" target="_blank">Github</a>
+      </span>
+    </footer>
+  </body>
+</html>
