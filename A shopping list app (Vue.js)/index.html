@@ -1,0 +1,55 @@
+<html>
+    <body>
+        <div id="shopping-list">
+            <div>
+                <h1> {{ header.toLocaleUpperCase() }} </h1>
+
+                <button v-if= "state === 'default'" @click="changeState('edit')">Add item</button>
+                <button v-else @click="changeState('default')">Cancel</button>
+            </div>
+            <div v-if= 'state === "edit"'>
+                <input v-model="addItem" type="text" placeholder=" + Add item" style=" width: 75px" @keyup.enter="addToList"> </input>
+                <button v-bind:disable="addItem.length == 0" @click="addToList">Add</button>
+            </div>
+            <!-- <a v-bind:href="addItem" target="_blank">Dynamic link </a> -->
+
+            <ul>
+                <li v-for="item in items">{{ item }}</li>
+            </ul>
+            <div v-if="items.length == 0">
+                 <p>
+                    Hi ! There is nothing to buy. 
+                 </p>
+            </div>
+        </div>
+    </body>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+        new Vue({
+            el: '#shopping-list',
+            data: {
+                state: 'default',
+                header: 'shopping list app',
+                addItem:"",
+                items: [
+                    // '10 party hats',
+                    // '2 board games',
+                    // '20 cups'
+                ]
+            },
+            methods : {
+                addToList:function(){
+                   if(this.addItem != ''){
+                    this.items.push(this.addItem)
+                    this.addItem = "";
+                   }
+                },
+                changeState: function(newState) {
+                    this.state = newState;
+                    this.addItem = '';
+                }
+            }
+        })
+    </script>
+</html>
+
