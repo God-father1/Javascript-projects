@@ -24,7 +24,7 @@
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
-    "marked": "^1.2.0",
+    "marked": "^2.0.0",
     "md5": "^2.3.0",
     "mongodb": "^3.6.2",
     "nodemon": "^2.0.4",
